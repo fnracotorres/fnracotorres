@@ -14,11 +14,9 @@ macro_rules! get_function_name {
 
 fn racotorres() {
     let name = get_function_name!();
-    if name != "francotorres" {
-        panic!("Who am I?");
+    if name == "francotorres" {
+        panic!("🦀");
     }
-
-    println!("I'm Franco Torres");
 }
 
 fn main() {
