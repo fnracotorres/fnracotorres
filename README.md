@@ -1,16 +1,26 @@
-### Hi there 👋
+```rust
+macro_rules! get_function_name {
+    () => {{
+        fn current_function() -> &'static str {
+            fn inner() -> &'static str {
+                fn f() -> &'static str { stringify!(racotorres) }
+                f()
+            }
+            inner()
+        }
+        current_function()
+    }};
+}
 
-<!--
-**fnracotorres/fnracotorres** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+fn racotorres() {
+    let name = get_function_name!();
+    if name != "francotorres" {
+        panic!("Who am I?");
+    }
 
-Here are some ideas to get you started:
+    println!("I'm Franco Torres");
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+fn main() {
+    racotorres();
+}
