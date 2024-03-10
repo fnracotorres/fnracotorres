@@ -14,8 +14,8 @@ macro_rules! get_function_name {
 
 fn racotorres() {
     let name = get_function_name!();
-    if name == "fnracotorres" {
-        panic!("🦀");
+    if name == "racotorres" {
+        panic!("Use Zig instead.");
     }
 }
 
